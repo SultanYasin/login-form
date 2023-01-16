@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <form>
+        <input placeholder="write something" minlength="5" maxlength="15" />
+        <br />
+
+        <div>
+          <label for="book">choose a book</label>
+          <select id="book" multiple size="{2}">
+            <optgroup label="group a">
+              <option value="1">book 1</option>
+              <option value="2">book 2</option>
+            </optgroup>
+            <optgroup label="group b">
+              <option value="4">book 4</option>
+              <option value="5">book 5</option>
+            </optgroup>
+          </select>
+        </div>
+        <br />
+        <div>
+          <input value="Reset" type="reset" />
+          <input value={"submit"} type="submit" />
+          <br />
+          <input type="range" min="0" max="10" name="range" step={"2"} value="0"
+          />
+          <input type="number" name="number" min="0" max="10" />
+          <br />
+          <input type="radio" name="os" value="windows" id="1" />
+          <label for="1">Windows</label>
+
+          <input type="radio" name="os" value="mac" id="2" />
+          <label for="2">Mac</label>
+
+          <input type="radio" name="os" value="linux" id="3" />
+          <label for="3">Linux</label>
+        </div>
+        <br />
+        <div>
+          <hr />
+          <input id="facebook" name="os" value={'FaceBook'} type="checkbox" />
+          <label for="facebook">Facebook</label><br />
+
+          <input id="instagram" name="os" value={'instagram'} type="checkbox" />
+          <label for="instagram">Instagram</label> <br />
+
+          <input id="twitter" value={'twitter'} type="checkbox" name="os" />
+          <label for="twitter">Twitter</label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,11 +1,12 @@
-
-import './App.css';
-import Auth from './Components/Auth';
+import "./App.css";
+import Auth from "./Components/Auth";
+import HTMLFilds from "./Components/HTMLFilds";
 
 function App() {
   return (
     <div className="App">
-       <Auth />
+     <HTMLFilds/>
+      {/* <Auth /> */}
     </div>
   );
 }

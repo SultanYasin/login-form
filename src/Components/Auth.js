@@ -89,6 +89,7 @@ const Auth = () => {
         <Button endIcon={isSignup?<HowToRegSharpIcon/> : <LoginSharpIcon/>} type="submit" sx={{ margin: 2 }} variant="contained">
           {isSignup ? "Signup" : "Login"}
         </Button>
+        
         <Button onClick={handleResetState} endIcon={isSignup? <LoginSharpIcon/> : <HowToRegSharpIcon/> } >
           {isSignup ? "Change to LOGIN" : "Don't have an account? signup"}
         </Button>
