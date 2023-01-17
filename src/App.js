@@ -1,12 +1,24 @@
+
+import { Container, Grid  } from "@mui/material";
 import "./App.css";
-import Auth from "./Components/Auth";
-import HTMLFilds from "./Components/HTMLFilds";
+
+import Card from "./Components/MuiComponents/Card";
 
 function App() {
   return (
     <div className="App">
-     <HTMLFilds/>
-      {/* <Auth /> */}
+      <Container>
+        <Grid container spacing={6} >
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </Grid>
+      </Container>
     </div>
   );
 }

@@ -49,6 +49,7 @@ const Auth = () => {
         maxWidth="500px"
         margin={"auto"}
         marginTop="10%"
+        border='solid 0.5px'
         borderRadius={5}
         boxShadow={"5px 5px 7px  #ccc"}
         gap="4px"
@@ -65,6 +66,7 @@ const Auth = () => {
             value={input.name}
             variant="outlined"
             placeholder="Name :"
+            
             margin="dense"
           />
         )}

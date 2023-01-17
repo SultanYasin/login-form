@@ -1,3 +1,11 @@
+body{
+  background-color:azure;
+}
+.CardIMG{
+  width: 80%;
+  height: 5rem;
+}
+
 /* .App {
   text-align: center;
 }
