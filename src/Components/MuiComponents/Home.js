@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Grid, Typography } from "@mui/material";
+import { BottomNavigation, Container, Grid, Typography } from "@mui/material";
 import Card from "./Card";
 import "../../App.css"; 
 import cities from "../../Data.json";
@@ -23,6 +23,7 @@ const Home = () => {
           </>
         ))}
       </Container>
+      <BottomNavigation  >2023</BottomNavigation>
     </div>
   );
 };
