@@ -1,25 +1,16 @@
-
-import { Container, Grid  } from "@mui/material";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-
-import Card from "./Components/MuiComponents/Card";
+import Home from "./Components/MuiComponents/Home";
+import PrimarySearchAppBar from "./Components/MuiComponents/PrimarySearchAppBar";
 
 function App() {
   return (
-    <div className="App">
-      <Container>
-        <Grid container spacing={6} >
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </Grid>
-      </Container>
-    </div>
+    <BrowserRouter>
+    <PrimarySearchAppBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
