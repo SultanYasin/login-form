@@ -1,0 +1,8 @@
+create variable that contains createContext()
+add props to function of the component
+use useState
+write some function 
+return the variable that contains createContext
+inside the variable write everything that I wanna share globally
+import the component itself in app.js and make it parent component
+//THE VARIABLE HAS TO BE IMPORTED IN EACH CLASS THAT USES USECONTEXT()
