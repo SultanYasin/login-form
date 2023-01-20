@@ -4,18 +4,20 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 
 import SignIn from './SignIn';
+import Auth from '../Auth';
 
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
+  width: 550,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: '0.5px solid #000',
   boxShadow: 24,
   p: 4,
-  borderRadius: '10px'
+  borderRadius: '7px',
+  
 };
 
 export default function SignInModal() {
@@ -33,7 +35,7 @@ export default function SignInModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-         <SignIn /> 
+         <Auth /> 
         
         </Box>
       </Modal>

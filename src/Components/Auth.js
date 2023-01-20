@@ -1,7 +1,12 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Avatar, Box, Button, Checkbox, FormControlLabel, Grid, TextField, Typography,
+} from "@mui/material";
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import React, { useEffect, useRef, useState } from "react";
 import LoginSharpIcon from "@mui/icons-material/LoginSharp";
 import HowToRegSharpIcon from "@mui/icons-material/HowToRegSharp";
+
+import styles from "../Components/MuiComponents/MyStyle.module.css";
+import { Link } from "react-router-dom";
 
 const Auth = () => {
   const [isSignup, setIsSignup] = useState(false);
@@ -10,6 +15,7 @@ const Auth = () => {
     email: "",
     password: "",
   });
+
 
   const handleChangeState = (event) => {
     setInput((prevState) => ({
@@ -20,7 +26,7 @@ const Auth = () => {
 
   const handleResetState = (event) => {
     setIsSignup(!isSignup);
-    setInput({ name: "", email: "", password: "" });
+    setInput({ name: "", email: "", password: "", confirmPassword: "" });
   };
 
   /* 
@@ -31,7 +37,7 @@ const Auth = () => {
 4- If I do not give onChange after I give value .. THE STATE WILL NEVER CHANGE NEVER NEVER NEVER THAT IS WHY I HAVE TO ->
 5- give onChange={} prop to be able to change the state 
 7- in onChange I use the "setStateItem" to modify the value of the state then I get all elements in the obj by distracturing the object -> ...obj
-8- get the properties I want from the object -> [event.targer.name] : event.target.value
+8- get the properties I want from the object -> [event.target.name] : event.target.value
 9-
 */
 
@@ -42,32 +48,24 @@ const Auth = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Box
-        display="flex"
-        flexDirection={"column"}
-        alignItems="center"
-        maxWidth="500px"
-        margin={"auto"}
-        marginTop="10%"
-        border='solid 0.5px'
-        borderRadius={5}
-        boxShadow={"5px 5px 7px  #ccc"}
-        gap="4px"
-        sx={{ ":hover": { boxShadow: "7px 7px 10px #ccc" } }}
-      >
+      <Box className={styles.BoxStyle} >
+
         <Typography textAlign="center" variant="h4" padding={3}>
-          {isSignup ? "Signup" : "Login"}{" "}
+          {isSignup ? "Signup" : "Login"}{" "}          
         </Typography>
+        <Avatar sx={{ bgcolor: 'secondary.main', marginLeft: '46%'}}   >
+            <LockOutlinedIcon />
+        </Avatar>
         {isSignup && (
           <TextField
             onChange={handleChangeState}
-            name="name"
+            name="name"           
             type={"text"}
             value={input.name}
             variant="outlined"
             placeholder="Name :"
-            
-            margin="dense"
+            fullWidth
+            margin="normal"
           />
         )}
         <TextField
@@ -77,7 +75,8 @@ const Auth = () => {
           value={input.email}
           variant="outlined"
           placeholder="Email :"
-          margin="dense"
+          margin="normal"
+          fullWidth
         />
         <TextField
           onChange={handleChangeState}
@@ -86,18 +85,63 @@ const Auth = () => {
           value={input.password}
           variant="outlined"
           placeholder="Password :"
-          margin="dense"
+          margin="normal"
+          fullWidth
         />
-        <Button endIcon={isSignup?<HowToRegSharpIcon/> : <LoginSharpIcon/>} type="submit" sx={{ margin: 2 }} variant="contained">
+        {isSignup && (
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="Password"
+            label="Password"
+            type="password"
+            id="password"
+            placeholder="ConfirmPassword"
+          />
+        )}
+        <Button
+          endIcon={isSignup ? <HowToRegSharpIcon /> : <LoginSharpIcon />}
+          type="submit"
+          sx={{ mt: 3, mb: 2 }}
+          fullWidth
+          variant="contained"
+        >
           {isSignup ? "Signup" : "Login"}
         </Button>
-        
-        <Button onClick={handleResetState} endIcon={isSignup? <LoginSharpIcon/> : <HowToRegSharpIcon/> } >
+        <br />
+        <Button
+          onClick={handleResetState}
+          endIcon={isSignup ? <LoginSharpIcon /> : <HowToRegSharpIcon />}
+        >
           {isSignup ? "Change to LOGIN" : "Don't have an account? signup"}
         </Button>
+
+        <br />
+        <FormControlLabel
+          control={<Checkbox value="remember" color="primary" />}
+          label="Remember me"
+        />
+
+        <Grid item marginTop={2} marginBottom={3}>
+          <Link href="#" variant="body2">
+            Forgot password?
+          </Link>
+        </Grid>
       </Box>
     </form>
   );
 };
 
 export default Auth;
+
+/*    display :"flex";
+   flex-direction : "column";
+   align-items : "center";
+   max-width: "600px";
+   margin: "auto";
+   margin-top: "10%";
+   border: "solid 0.5px";
+   border-radius: "5";
+   box-shadow: "5px 5px 7px  #ccc";
+   gap: "4px"; */

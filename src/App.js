@@ -4,9 +4,6 @@ import Home from "./Components/MuiComponents/Home";
 import PrimarySearchAppBar from "./Components/MuiComponents/PrimarySearchAppBar";
 import Tour from "./Components/MuiComponents/Tour";
 
-import Header from "./Components/Hooks/Header";
-import Login from "./Components/Hooks/Login";
-import ThemeProvider from "./Components/Hooks/ThemeContext";
 
 function App() {
   return (
@@ -23,6 +20,9 @@ function App() {
 export default App;
 
 /*
+import Header from "./Components/Hooks/Header";
+import Login from "./Components/Hooks/Login";
+import ThemeProvider from "./Components/Hooks/ThemeContext";
 
  <ThemeProvider>
         <Header />

@@ -15,7 +15,7 @@ const Home = () => {
             <Typography variant="h4" marginTop={5} marginBottom={3}>
               Top {city.name} Tours
             </Typography>
-            <Grid container spacing={5}>
+            <Grid container spacing={3}>
               {city.tours.map((tour, index) => (
                 <Card tour={tour} key={index} />
               ))}
