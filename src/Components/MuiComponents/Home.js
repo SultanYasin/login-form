@@ -23,7 +23,7 @@ const Home = () => {
           </>
         ))}
       </Container>
-      <BottomNavigation  >2023</BottomNavigation>
+      <BottomNavigation showLabels >2023</BottomNavigation>
     </div>
   );
 };
